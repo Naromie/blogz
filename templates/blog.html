@@ -1,0 +1,20 @@
+{%extends "base.html" %}
+{% block content %}
+
+<a href="/newpost">Add a Blog Entry</a>
+<a href="/blog">Main Blog Page</a>
+<h1>Build a Blog </h1>
+
+{% for post in posts %}
+
+
+        <h2><a href="{{url_for('post',post_id=post.id)}}"> {{post.blog_title}}</a> </h2>  
+        <p> {{post.blog_post}} </p>
+        
+        
+
+{% endfor %}
+
+
+
+{%endblock%}
