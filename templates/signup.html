@@ -1,0 +1,132 @@
+
+
+     
+     {% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <form method="POST" action="">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <h2>Please, Sign Up</h2>
+                <hr>
+            </div>
+        </div>
+        <!-- Start of Username -->
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="username">Username</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <input type="text" name="username" class="form-control" id="username" value="{{ request.form['username'] }}"
+                               placeholder="naromie">
+                    </div>
+                </div>
+            </div>
+            <!-- Username Validation -->
+            {% if username_error %}
+            <div class="col-md-3">
+                <div class="form-control-feedback">
+                        <span class="text-danger align-middle">
+                            {{ username_error }}
+                        </span>
+                </div>
+            </div>
+            {% endif %}
+            <!-- End Of Username Validation -->
+        </div>
+         <!-- End of Username -->
+          
+         <!-- Start of Email Form -->
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="email">E-Mail Address</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <input type="text" name="email" class="form-control" id="email" value="{{ request.form['email'] }}" placeholder="you@example.com">
+                    </div>
+                </div>
+            </div>
+             <!-- Email Validation -->
+             {% if email_error %}
+             <div class="col-md-3">
+                 <div class="form-control-feedback">
+                    <span class="text-danger align-middle">
+                        {{ email_error }}
+                    </span>
+                 </div>
+             </div>
+             {% endif %}
+             <!-- End Of Email Validation -->
+        </div>
+        <!-- End of Email Form -->
+
+        <!-- Start of Password Form -->
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="password">Password</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group has-danger">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+                </div>
+            </div>
+             <!-- Password Validation -->
+             {% if password_error %}
+             <div class="col-md-3">
+                 <div class="form-control-feedback">
+                    <span class="text-danger align-middle">
+                        {{ password_error }}
+                    </span>
+                 </div>
+             </div>
+             {% endif %}
+             <!-- End Of Password Validation -->
+        </div>
+        <!-- End of Password Form -->
+
+        <!-- Start of verify_password Form -->
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="verify_password">Verify_password</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    
+                        <input type="password" name="verify_password" class="form-control"
+                               id="verify_password" placeholder="Password">
+                    </div>
+                </div>
+            </div>
+              <!-- verify_password Validation -->
+              {% if verify_password_error %}
+              <div class="col-md-3">
+                  <div class="form-control-feedback">
+                          <span class="text-danger align-middle">
+                              {{ verify_password_error }}
+                          </span>
+                  </div>
+              </div>
+              {% endif %}
+              <!-- End Of verify_passwod Validation -->
+        </div>
+
+         <!-- End of verify_password Form -->
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-success">Register</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock content %}

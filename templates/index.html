@@ -1,0 +1,26 @@
+{%extends "base.html" %}
+{% block content %}
+
+
+
+{% for user in users %}
+
+
+       <div class="container">
+           <ul>
+               <li>
+                    <small class="h6 text-info">
+                        <a href="{{url_for('single_user',username=user.username)}}"> {{user.username}}</a></small>
+               </li>
+           </ul>
+       </div>
+
+       
+{% endfor %}
+
+
+
+{%endblock%}
+
+
+

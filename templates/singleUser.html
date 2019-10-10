@@ -1,0 +1,28 @@
+{%extends "base.html" %}
+{% block content %}
+
+{% if post_number == 0 %}
+<h3> No Post Yet for {{user.username}} </h3>
+{%endif%}
+{% for post in posts %}
+    <h2><a href="{{url_for('single_post',post_id=post.id)}}">{{post.blog_title}}</a></h2>
+    <small class="h6 text-info">published by:
+        <a href="{{url_for('single_user',username=post.owner.username)}}">{{post.owner.username}}</a></small>
+
+
+   <br>
+   <p>{{post.blog_post}}</p>
+   <br>
+
+
+
+{% endfor%}
+        
+        
+        
+
+
+
+
+
+{%endblock%}
